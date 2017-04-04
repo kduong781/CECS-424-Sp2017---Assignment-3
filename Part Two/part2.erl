@@ -16,4 +16,8 @@ dupl(String, List) ->
 
 table(A) ->
   HashTable = {},
-  lists:foldl(fun dupl/2, HashTable, A).
+  lists:foldl(dupl/, HashTable, A).
+
+sort(A) ->
+  HashTable = table(open(A)),
+  lists.sort(HashTable).
