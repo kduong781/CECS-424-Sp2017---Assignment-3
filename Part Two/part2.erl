@@ -10,14 +10,14 @@ open(A) ->
 dupl(String, List) ->
   case lists:keyfind(String, 1, List) of
       {String, Result} ->
-        List2 = list:keyreplace(String, 1, List, {String, Result+1});
+        List2 = lists:keyreplace(String, 1, List, {String, Result+1});
       false -> List2 = lists:append(List, {String, 1})
   end.
 
 table(A) ->
   HashTable = {},
-  lists:foldl(dupl/, HashTable, A).
+  lists:foldl(fun dupl/2, HashTable, A).
 
 sort(A) ->
   HashTable = table(open(A)),
-  lists.sort(HashTable).
+  lists:sort(HashTable).

@@ -29,7 +29,7 @@
         DIFF == 0 ->
           io:fwrite("Recursion is over (Everyone has same amount)");
         D > 1 ->
-          whistle(add_one(A2),add_one(B2), add_one(C2), D+1); % change D+1 to D-1 if rules are diff
+          whistle(add_one(A2),add_one(B2), add_one(C2), D-1); % change D+1 to D-1 if rules are diff
         true ->
           io:fwrite("Recursion is over")
       end.
